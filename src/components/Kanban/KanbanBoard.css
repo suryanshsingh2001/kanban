@@ -1,0 +1,5 @@
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; /* Add margin for spacing */
+  }

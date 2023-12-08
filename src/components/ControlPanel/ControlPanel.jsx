@@ -1,6 +1,6 @@
 // components/ControlPanel.js
 import React from 'react';
-// import './ControlPanel.css';
+import './ControlPanel.css';
 
 const ControlPanel = ({ groupingOption, sortOption, onGroupingChange, onSortChange }) => {
   return (

@@ -1,0 +1,15 @@
+/* TicketColumn.css */
+.ticket-column {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 10px;
+    flex: 1; /* Allow the column to grow and shrink */
+    background-color: #f9f9f9;
+  }
+  
+  .ticket-column h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Add more styles as needed */
+  

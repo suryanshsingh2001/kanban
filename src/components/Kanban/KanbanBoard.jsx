@@ -1,7 +1,7 @@
 // components/KanbanBoard.js
 import React from 'react';
-import TicketColumn from './TicketColumn';
-// import './KanbanBoard.css';
+import TicketColumn from '../Ticket/TicketColumn';
+import './KanbanBoard.css';
 
 const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
   // Group and sort tickets based on options

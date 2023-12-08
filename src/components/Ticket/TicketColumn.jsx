@@ -1,7 +1,7 @@
 // components/TicketColumn.js
 import React from 'react';
 import TicketCard from './TicketCard';
-// import './TicketColumn.css';
+import './TicketColumn.css';
 
 const TicketColumn = ({ title, tickets, sortOption, users }) => {
   // Implement logic to sort tickets based on sortOption

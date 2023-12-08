@@ -1,0 +1,21 @@
+/* ControlPanel.css */
+.control-panel {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .control-panel button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .control-panel button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Add more styles as needed */
+  

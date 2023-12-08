@@ -1,6 +1,6 @@
 // components/TicketCard.js
 import React from 'react';
-// import './TicketCard.css';
+import './TicketCard.css';
 
 const TicketCard = ({ ticket, users }) => {
   // Implement logic to display ticket information

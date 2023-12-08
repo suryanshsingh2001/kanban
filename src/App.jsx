@@ -1,14 +1,14 @@
 // App.js
 import React, { useState, useEffect } from 'react';
-import KanbanBoard from './components/KanbanBoard';
-import ControlPanel from './components/ControlPanel';
+import KanbanBoard from './components/Kanban/KanbanBoard';
+import ControlPanel from './components/ControlPanel/ControlPanel';
 import './App.css';
 
 const App = () => {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]); // Add users state
   const [groupingOption, setGroupingOption] = useState('status');
-  const [sortOption, setSortOption] = useState('priority');
+  const [sortOption, setSortOption] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +17,6 @@ const App = () => {
         const data = await response.json();
         setTickets(data.tickets);
         setUsers(data.users); // Set users state
-        console.log(data.users);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -36,17 +35,20 @@ const App = () => {
 
   return (
     <div className="app">
-      <ControlPanel
-        groupingOption={groupingOption}
-        sortOption={sortOption}
-        onGroupingChange={handleGroupingChange}
-        onSortChange={handleSortChange}
-      />
-      {tickets.length > 0 ? (
-        <KanbanBoard tickets={tickets} groupingOption={groupingOption} sortOption={sortOption} users={users} />
-      ) : (
-        <p>Loading tickets...</p>
-      )}
+      <div className="heading">Kanban Board</div>
+      <div className="columns">
+        <ControlPanel
+          groupingOption={groupingOption}
+          sortOption={sortOption}
+          onGroupingChange={handleGroupingChange}
+          onSortChange={handleSortChange}
+        />
+        {tickets.length > 0 ? (
+          <KanbanBoard tickets={tickets} groupingOption={groupingOption} sortOption={sortOption} users={users} />
+        ) : (
+          <p>Loading tickets...</p>
+        )}
+      </div>
     </div>
   );
 };
