@@ -2,14 +2,17 @@
 import React from 'react';
 // import './TicketCard.css';
 
-const TicketCard = ({ ticket }) => {
+const TicketCard = ({ ticket, users }) => {
   // Implement logic to display ticket information
-  const { title, user, priority, status } = ticket;
+  const { title, userId, priority, status } = ticket;
+  
+  // Find the user based on userId
+  const user = users.find((user) => user.id === userId);
 
   return (
     <div className="ticket-card">
       <h3>{title}</h3>
-      <p>User: {user}</p>
+      <p>User: {user ? user.name : 'Unknown User'}</p>
       <p>Priority: {getPriorityLabel(priority)}</p>
       <p>Status: {status}</p>
       {/* Add any additional ticket details you want to display */}

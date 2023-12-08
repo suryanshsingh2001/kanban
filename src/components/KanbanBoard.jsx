@@ -3,7 +3,7 @@ import React from 'react';
 import TicketColumn from './TicketColumn';
 // import './KanbanBoard.css';
 
-const KanbanBoard = ({ tickets, groupingOption, sortOption }) => {
+const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
   // Group and sort tickets based on options
   const groupedAndSortedTickets = groupAndSortTickets(tickets, groupingOption, sortOption);
 
@@ -15,17 +15,19 @@ const KanbanBoard = ({ tickets, groupingOption, sortOption }) => {
           title={groupTitle}
           tickets={groupedAndSortedTickets[groupTitle]}
           sortOption={sortOption}
+          users={users} // Pass users prop to TicketColumn
         />
       ))}
     </div>
   );
 };
 
-// Helper function to group tickets and sort based on options
+// Helper function to group and sort tickets
 const groupAndSortTickets = (tickets, groupingOption, sortOption) => {
-  // Group tickets based on groupingOption
+  // Implement logic to group and sort tickets
   let groupedTickets = {};
 
+  // Group tickets based on groupingOption
   switch (groupingOption) {
     case 'status':
       groupedTickets = groupByStatus(tickets);

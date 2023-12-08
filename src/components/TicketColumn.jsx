@@ -3,7 +3,7 @@ import React from 'react';
 import TicketCard from './TicketCard';
 // import './TicketColumn.css';
 
-const TicketColumn = ({ title, tickets, sortOption }) => {
+const TicketColumn = ({ title, tickets, sortOption, users }) => {
   // Implement logic to sort tickets based on sortOption
   const sortedTickets = sortTickets(tickets, sortOption);
 
@@ -11,7 +11,7 @@ const TicketColumn = ({ title, tickets, sortOption }) => {
     <div className="ticket-column">
       <h2>{title}</h2>
       {sortedTickets.map((ticket) => (
-        <TicketCard key={ticket.id} ticket={ticket} />
+        <TicketCard key={ticket.id} ticket={ticket} users={users} />
       ))}
     </div>
   );
