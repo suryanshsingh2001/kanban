@@ -12,8 +12,6 @@ const TicketColumn = ({
   users,
 }) => {
   const sortedTickets = sortTickets(tickets, sortOption);
-  console.log(sortTickets.title);
-
   return (
     <div className="ticket-column">
       <h2 className="ticket-heading">
