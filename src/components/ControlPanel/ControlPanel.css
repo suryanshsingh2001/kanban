@@ -1,8 +1,8 @@
 /* components/ControlPanel.css */
 .control-panel {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .dropdown {

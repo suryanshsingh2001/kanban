@@ -36,13 +36,14 @@ const App = () => {
   return (
     <div className="app">
       <div className="heading">Kanban Board</div>
-      <div className="columns">
-        <ControlPanel
+      <ControlPanel
           groupingOption={groupingOption}
           sortOption={sortOption}
           onGroupingChange={handleGroupingChange}
           onSortChange={handleSortChange}
         />
+      <div className="columns">
+        
         {tickets.length > 0 ? (
           <KanbanBoard tickets={tickets} groupingOption={groupingOption} sortOption={sortOption} users={users} />
         ) : (
