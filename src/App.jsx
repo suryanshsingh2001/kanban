@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
-import KanbanBoard from "./components/KanBan/KanbanBoard";
+import KanbanBoard from './components/Kanban/KanbanBoard';
 import "./App.css";
 
 

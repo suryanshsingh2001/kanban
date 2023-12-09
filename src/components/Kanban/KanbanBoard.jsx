@@ -1,5 +1,5 @@
 import React from "react";
-import TicketColumn from "../Ticket/TicketColumn";
+import TicketColumn from '../Ticket/TicketColumn';
 import "./KanbanBoard.css";
 
 const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
