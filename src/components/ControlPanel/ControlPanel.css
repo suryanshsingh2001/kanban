@@ -1,21 +1,45 @@
-/* ControlPanel.css */
+/* components/ControlPanel.css */
 .control-panel {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .control-panel button {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .control-panel button.active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Add more styles as needed */
-  
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  position: relative;
+  margin-right: 20px;
+}
+
+.dropdown-toggle {
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-right: 5px;
+}
+
+select {
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.active {
+  /* Add your active styles */
+  font-weight: bold;
+}

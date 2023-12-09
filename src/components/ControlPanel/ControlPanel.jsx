@@ -1,26 +1,44 @@
 // components/ControlPanel.js
-import React from 'react';
+import React, { useState } from 'react';
 import './ControlPanel.css';
 
 const ControlPanel = ({ groupingOption, sortOption, onGroupingChange, onSortChange }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   return (
     <div className="control-panel">
-      <button onClick={() => onGroupingChange('status')} className={groupingOption === 'status' ? 'active' : ''}>
-        Group by Status
-      </button>
-      <button onClick={() => onGroupingChange('user')} className={groupingOption === 'user' ? 'active' : ''}>
-        Group by User
-      </button>
-      <button onClick={() => onGroupingChange('priority')} className={groupingOption === 'priority' ? 'active' : ''}>
-        Group by Priority
-      </button>
-
-      <button onClick={() => onSortChange('priority')} className={sortOption === 'priority' ? 'active' : ''}>
-        Sort by Priority
-      </button>
-      <button onClick={() => onSortChange('title')} className={sortOption === 'title' ? 'active' : ''}>
-        Sort by Title
-      </button>
+      <div className="dropdown">
+        <button onClick={toggleDropdown} className="dropdown-toggle">
+          Display
+        </button>
+        {isDropdownOpen && (
+          <div className="dropdown-content">
+            <div>
+              <label>Grouping:</label>
+              <select value={groupingOption} onChange={(e) => onGroupingChange(e.target.value)}>
+                <option value="status">Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
+              </select>
+            </div>
+            <div>
+              <label>Sorting:</label>
+              <select value={sortOption} onChange={(e) => onSortChange(e.target.value)}>
+                <option value="priority">Sort by Priority</option>
+                <option value="title">Sort by Title</option>
+              </select>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

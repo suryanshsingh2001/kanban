@@ -8,7 +8,7 @@ const App = () => {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]); // Add users state
   const [groupingOption, setGroupingOption] = useState('status');
-  const [sortOption, setSortOption] = useState('');
+  const [sortOption, setSortOption] = useState('title');
 
   useEffect(() => {
     const fetchData = async () => {
