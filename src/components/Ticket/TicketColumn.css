@@ -3,7 +3,8 @@
   padding: 15px;
   margin: 0 10px;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: baseline;
   /* background-color: #f5f5f5; */
   border-radius: 8px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
@@ -23,6 +24,7 @@
   padding: 3px 8px;
   border-radius: 15px;
   font-size: 14px;
+ 
 }
 
 .ticket-count-badge:empty {
@@ -45,7 +47,11 @@
   padding: 5px;
   font-size: 16px;
   border-radius: 3px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.action-icon:hover {
+  background-color: #ddd; /* Adjust the color on hover as needed */
+  color: #333; /* Adjust the text color on hover as needed */
 }
 
 /* Dynamic spacing for ticket count badge */
@@ -67,4 +73,32 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.status-icon {
+  font-size: 24px;
+  color: #050606; /* You can customize the color */
+  margin-right: 10px; /* Adjust the spacing as needed */
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  transition: transform 0.2s ease-in-out;
+}
+
+.status-icon:hover {
+  transform: scale(1.2); /* Adjust the scale factor for the icon on hover */
+}
+
+
+.priority-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Add hover animation */
+.priority-icon:hover {
+  transform: scale(1.2);
 }

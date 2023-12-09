@@ -3,7 +3,7 @@ import React from "react";
 import "./TicketCard.css";
 import placeholderImage from "../../assets/profiles/placeholder_image.jpg";
 
-const TicketCard = ({ ticket, users }) => {
+const TicketCard = ({ ticket, users, groupingOption }) => {
   const { title, userId, priority, status, tag, id } = ticket;
 
   // Find the user based on userId
@@ -11,7 +11,9 @@ const TicketCard = ({ ticket, users }) => {
 
   return (
     <div className="ticket-card">
-      <div className={`priority-dot ${getPriorityClass(priority)}`} />
+      {groupingOption !== "priority" && (
+        <div className={`priority-dot ${getPriorityClass(priority)}`} />
+      )}
       <div className="profile-picture">
         <img
           src="https://randomuser.me/api/portraits/men/47.jpg"

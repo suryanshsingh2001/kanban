@@ -18,6 +18,7 @@ const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
           key={groupTitle}
           title={groupTitle}
           tickets={groupedAndSortedTickets[groupTitle]}
+          groupingOption={groupingOption}
           sortOption={sortOption}
           users={users} // Pass users prop to TicketColumn
         />
