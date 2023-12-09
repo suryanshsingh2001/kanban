@@ -1,4 +1,5 @@
 // components/TicketColumn.js
+
 import React from 'react';
 import TicketCard from './TicketCard';
 import './TicketColumn.css';
@@ -9,12 +10,13 @@ const TicketColumn = ({ title, tickets, sortOption, users }) => {
 
   return (
     <div className="ticket-column">
-      <h2>{title} {tickets.length}</h2>
+      <h2>
+        {title}
+        <span className="ticket-count-badge">{tickets.length}</span>
+      </h2>
       {sortedTickets.map((ticket) => (
         <TicketCard key={ticket.id} ticket={ticket} users={users} />
-        
-      ))
-      }
+      ))}
     </div>
   );
 };

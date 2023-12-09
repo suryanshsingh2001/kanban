@@ -1,15 +1,36 @@
 /* TicketColumn.css */
+
 .ticket-column {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 0 10px;
-    flex: 1; /* Allow the column to grow and shrink */
-    background-color: #f9f9f9;
-  }
-  
-  .ticket-column h2 {
-    margin-bottom: 10px;
-  }
-  
-  /* Add more styles as needed */
-  
+  /* border: 1px solid #ccc; */
+  padding: 15px;
+  margin: 0 10px;
+  flex: 1;
+  /* background-color: #f5f5f5; */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.ticket-column h2 {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Count badge styles */
+.ticket-count-badge {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.ticket-count-badge:empty {
+  display: none; /* Hide badge if count is zero */
+}
+
+/* Additional styling for TicketCard */
+.ticket-column .ticket-card {
+  margin-bottom: 15px;
+}
