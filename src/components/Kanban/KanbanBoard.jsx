@@ -1,4 +1,3 @@
-// components/KanbanBoard.js
 import React from "react";
 import TicketColumn from "../Ticket/TicketColumn";
 import "./KanbanBoard.css";
