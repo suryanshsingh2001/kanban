@@ -1,8 +1,13 @@
-// components/ControlPanel.js
-import React, { useState } from 'react';
-import './ControlPanel.css';
+import React, { useState } from "react";
+import { HiAdjustmentsHorizontal } from "react-icons/hi2";
+import "./ControlPanel.css";
 
-const ControlPanel = ({ groupingOption, sortOption, onGroupingChange, onSortChange }) => {
+const ControlPanel = ({
+  groupingOption,
+  sortOption,
+  onGroupingChange,
+  onSortChange,
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -17,21 +22,27 @@ const ControlPanel = ({ groupingOption, sortOption, onGroupingChange, onSortChan
     <div className="control-panel">
       <div className="dropdown">
         <button onClick={toggleDropdown} className="dropdown-toggle">
-          Display
+          <HiAdjustmentsHorizontal className="icon" /> Display
         </button>
         {isDropdownOpen && (
           <div className="dropdown-content">
-            <div>
-              <label>Grouping:</label>
-              <select value={groupingOption} onChange={(e) => onGroupingChange(e.target.value)}>
+            <div className="grouping-line">
+              <p className="label">Grouping:</p>
+              <select
+                value={groupingOption}
+                onChange={(e) => onGroupingChange(e.target.value)}
+              >
                 <option value="status">Status</option>
                 <option value="user">User</option>
                 <option value="priority">Priority</option>
               </select>
             </div>
-            <div>
-              <label>Sorting:</label>
-              <select value={sortOption} onChange={(e) => onSortChange(e.target.value)}>
+            <div className="sorting-line">
+              <p className="label">Sorting:</p>
+              <select
+                value={sortOption}
+                onChange={(e) => onSortChange(e.target.value)}
+              >
                 <option value="priority">Priority</option>
                 <option value="title">Title</option>
               </select>

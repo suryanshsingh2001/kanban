@@ -1,10 +1,9 @@
-/* TicketColumn.css */
-
 .ticket-column {
   /* border: 1px solid #ccc; */
   padding: 15px;
   margin: 0 10px;
   flex: 1;
+  justify-content: space-between;
   /* background-color: #f5f5f5; */
   border-radius: 8px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
@@ -21,7 +20,7 @@
 .ticket-count-badge {
   background-color: #007bff;
   color: #fff;
-  padding: 5px 10px;
+  padding: 3px 8px;
   border-radius: 15px;
   font-size: 14px;
 }
@@ -33,4 +32,39 @@
 /* Additional styling for TicketCard */
 .ticket-column .ticket-card {
   margin-bottom: 15px;
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px; 
+}
+
+.action-icon {
+  cursor: pointer;
+  color: rgba(85, 84, 84, 0.562);
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Dynamic spacing for ticket count badge */
+.ticket-column h2 .ticket-count-badge {
+  margin-left: 10px; 
+  max-width: calc(100% - 100px); 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.count {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+.ticket-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }

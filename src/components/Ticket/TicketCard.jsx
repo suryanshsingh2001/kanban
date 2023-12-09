@@ -4,7 +4,6 @@ import "./TicketCard.css";
 import placeholderImage from "../../assets/profiles/placeholder_image.jpg";
 
 const TicketCard = ({ ticket, users }) => {
-  // Implement logic to display ticket information
   const { title, userId, priority, status, tag, id } = ticket;
 
   // Find the user based on userId
@@ -12,7 +11,7 @@ const TicketCard = ({ ticket, users }) => {
 
   return (
     <div className="ticket-card">
-       <div className={`priority-dot ${getPriorityClass(priority)}`} />
+      <div className={`priority-dot ${getPriorityClass(priority)}`} />
       <div className="profile-picture">
         <img
           src="https://randomuser.me/api/portraits/men/47.jpg"
@@ -20,7 +19,7 @@ const TicketCard = ({ ticket, users }) => {
         />
         {user && user.available && <div className="green-dot" />}
       </div>
-      <h2>{id}</h2>
+      <h2 className="id-text">{id}</h2>
       <h3>{title}</h3>
 
       {/* Added priority dot */}
@@ -32,8 +31,6 @@ const TicketCard = ({ ticket, users }) => {
           </div>
         ))}
       </div>
-
-      {/* Add any additional ticket details you want to display */}
     </div>
   );
 };

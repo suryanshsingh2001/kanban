@@ -1,11 +1,16 @@
 // components/KanbanBoard.js
-import React from 'react';
-import TicketColumn from '../Ticket/TicketColumn';
-import './KanbanBoard.css';
+import React from "react";
+import TicketColumn from "../Ticket/TicketColumn";
+import "./KanbanBoard.css";
 
 const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
   // Group and sort tickets based on options
-  const groupedAndSortedTickets = groupAndSortTickets(tickets, groupingOption, sortOption, users);
+  const groupedAndSortedTickets = groupAndSortTickets(
+    tickets,
+    groupingOption,
+    sortOption,
+    users
+  );
 
   return (
     <div className="kanban-board">
@@ -28,13 +33,13 @@ const groupAndSortTickets = (tickets, groupingOption, sortOption, users) => {
   let groupedTickets = {};
   // Group tickets based on groupingOption
   switch (groupingOption) {
-    case 'status':
+    case "status":
       groupedTickets = groupByStatus(tickets);
       break;
-    case 'user':
+    case "user":
       groupedTickets = groupByUser(tickets, users);
       break;
-    case 'priority':
+    case "priority":
       groupedTickets = groupByPriority(tickets);
       break;
     default:
@@ -43,7 +48,10 @@ const groupAndSortTickets = (tickets, groupingOption, sortOption, users) => {
 
   // Sort tickets based on sortOption
   Object.keys(groupedTickets).forEach((groupKey) => {
-    groupedTickets[groupKey] = sortTickets(groupedTickets[groupKey], sortOption);
+    groupedTickets[groupKey] = sortTickets(
+      groupedTickets[groupKey],
+      sortOption
+    );
   });
 
   return groupedTickets;
@@ -66,8 +74,8 @@ const groupByUser = (tickets, users) => {
   return tickets.reduce((grouped, ticket) => {
     const { userId } = ticket;
     const user = users.find((user) => user.id === userId);
-    const userName = user ? user.name : 'Unknown User';
-    
+    const userName = user ? user.name : "Unknown User";
+
     if (!grouped[userName]) {
       grouped[userName] = [];
     }
@@ -81,7 +89,7 @@ const groupByPriority = (tickets) => {
   return tickets.reduce((grouped, ticket) => {
     const { priority } = ticket;
     const priorityLabel = getPriorityLabel(priority);
-    
+
     if (!grouped[priorityLabel]) {
       grouped[priorityLabel] = [];
     }
@@ -92,11 +100,11 @@ const groupByPriority = (tickets) => {
 
 // Helper function to sort tickets
 const sortTickets = (tickets, sortOption) => {
-  // Implement logic to sort tickets based on sortOption
+  
   switch (sortOption) {
-    case 'priority':
+    case "priority":
       return tickets.sort((a, b) => b.priority - a.priority);
-    case 'title':
+    case "title":
       return tickets.sort((a, b) => a.title.localeCompare(b.title));
     default:
       return tickets;
@@ -107,17 +115,17 @@ const sortTickets = (tickets, sortOption) => {
 const getPriorityLabel = (priority) => {
   switch (priority) {
     case 4:
-      return 'Urgent';
+      return "Urgent";
     case 3:
-      return 'High';
+      return "High";
     case 2:
-      return 'Medium';
+      return "Medium";
     case 1:
-      return 'Low';
+      return "Low";
     case 0:
-      return 'No priority';
+      return "No priority";
     default:
-      return '';
+      return "";
   }
 };
 
