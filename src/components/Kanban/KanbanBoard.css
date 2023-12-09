@@ -9,10 +9,10 @@
   width: 100%; 
 }
 
-/* Old KanbanBoard.css */
-
-/* .kanban-board {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}  */
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column; /* Stack columns on small screens */
+    align-items: center; /* Center content */
+  }
+}

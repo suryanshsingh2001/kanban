@@ -1,19 +1,18 @@
+/* TicketColumn.css */
+
 .ticket-column {
-  /* border: 1px solid #ccc; */
   padding: 15px;
   margin: 0 10px;
   flex: 1;
   justify-content: center;
   align-items: baseline;
-  /* background-color: #f5f5f5; */
   border-radius: 8px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .ticket-column h2 {
   margin-bottom: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Reverted to space-between for responsiveness */
   align-items: center;
 }
 
@@ -24,11 +23,6 @@
   padding: 3px 8px;
   border-radius: 15px;
   font-size: 14px;
- 
-}
-
-.ticket-count-badge:empty {
-  display: none; /* Hide badge if count is zero */
 }
 
 /* Additional styling for TicketCard */
@@ -38,7 +32,7 @@
 
 .action-icons {
   display: flex;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .action-icon {
@@ -49,15 +43,16 @@
   border-radius: 3px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
+
 .action-icon:hover {
-  background-color: #ddd; /* Adjust the color on hover as needed */
-  color: #333; /* Adjust the text color on hover as needed */
+  background-color: #ddd;
+  color: #333;
 }
 
 /* Dynamic spacing for ticket count badge */
 .ticket-column h2 .ticket-count-badge {
-  margin-left: 10px; 
-  max-width: calc(100% - 100px); 
+  margin-left: 10px;
+  max-width: calc(100% - 100px); /* Adjusted max-width for responsiveness */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -69,27 +64,14 @@
   color: #333;
   font-weight: bold;
 }
+
 .ticket-heading {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column; /* Updated to column layout for responsiveness */
+  align-items: flex-start; /* Align items to the start in column layout */
 }
 
-.status-icon {
-  font-size: 24px;
-  color: #050606; /* You can customize the color */
-  margin-right: 10px; /* Adjust the spacing as needed */
-  display: flex;
-  align-items: center;
-  justify-content: baseline;
-  transition: transform 0.2s ease-in-out;
-}
-
-.status-icon:hover {
-  transform: scale(1.2); /* Adjust the scale factor for the icon on hover */
-}
-
-
+.status-icon,
 .priority-icon {
   font-size: 24px;
   margin-right: 10px;
@@ -99,6 +81,26 @@
 }
 
 /* Add hover animation */
+.status-icon:hover,
 .priority-icon:hover {
   transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  /* Apply styles for screens with a minimum width of 768px */
+  .ticket-column {
+    max-width: 300px; /* Adjust max-width based on your design */
+    margin: 0 auto; /* Center the column on larger screens */
+  }
+
+  .ticket-heading {
+    flex-direction: row; /* Revert to row layout for larger screens */
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .status-icon,
+  .priority-icon {
+    margin-right: 0; /* Remove margin-right for larger screens */
+  }
 }
