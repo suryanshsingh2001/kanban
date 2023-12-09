@@ -1,17 +1,7 @@
 import React from "react";
 import TicketCard from "./TicketCard";
 import { FaEllipsisH, FaPlus } from "react-icons/fa";
-import { GrStatusWarning } from "react-icons/gr";
-import { AiOutlineCheck } from "react-icons/ai";
-import { BiTimeFive } from "react-icons/bi";
-import {
-  FaExclamationCircle,
-  FaExclamationTriangle,
-  FaCheckCircle,
-  FaInfoCircle,
-  FaBan,
-} from "react-icons/fa";
-
+import { statusIcons, priorityIcons } from "../../constants";
 import "./TicketColumn.css";
 
 const TicketColumn = ({
@@ -22,22 +12,6 @@ const TicketColumn = ({
   users,
 }) => {
   const sortedTickets = sortTickets(tickets, sortOption);
-
-  // Map each title to its corresponding icon for grouping by status
-  const statusIcons = {
-    Todo: <AiOutlineCheck color="black" />,
-    "In progress": <BiTimeFive color="purple"/>,
-    Backlog: <GrStatusWarning color="red" />,
-  };
-
-  // Map each priority to its corresponding icon for grouping by priority
-  const priorityIcons = {
-    Urgent: <FaExclamationCircle color="#d9534f" />,
-    High: <FaExclamationTriangle color="#f0ad4e" />,
-    Medium: <FaInfoCircle color="#FFA500" />, //yellow
-    Low: <FaInfoCircle color="#5cb85c" />,
-    "No priority": <FaBan color="#777" />,
-  };
 
   return (
     <div className="ticket-column">
@@ -55,7 +29,12 @@ const TicketColumn = ({
         </div>
       </h2>
       {sortedTickets.map((ticket) => (
-        <TicketCard key={ticket.id} ticket={ticket} users={users} groupingOption={groupingOption} />
+        <TicketCard
+          key={ticket.id}
+          ticket={ticket}
+          users={users}
+          groupingOption={groupingOption}
+        />
       ))}
     </div>
   );
