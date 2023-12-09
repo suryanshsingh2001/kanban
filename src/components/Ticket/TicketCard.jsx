@@ -25,13 +25,12 @@ const TicketCard = ({ ticket, users, groupingOption }) => {
           {priorityIcons[getPriorityLabel(priority)]}
         </div>
       )}
-      {/* Conditionally render profile picture based on grouping option */}
-      {groupingOption !== "user" && (
-        <div className="profile-picture">
-          <img src={getProfileImageURL(userId)} alt="Profile" />
-          {user && user.available && <div className="green-dot" />}
-        </div>
-      )}
+
+      <div className="profile-picture">
+        <img src={getProfileImageURL(userId)} alt="Profile" />
+        {user && user.available && <div className="green-dot" />}
+      </div>
+
       <h2 className="id-text">{id}</h2>
       <h3>{title}</h3>
 

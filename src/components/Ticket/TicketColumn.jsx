@@ -1,7 +1,7 @@
 import React from "react";
 import TicketCard from "./TicketCard";
 import { FaEllipsisH, FaPlus } from "react-icons/fa";
-import { statusIcons, priorityIcons } from "../../constants";
+import { statusIcons, priorityIcons, userProfileImages } from "../../constants";
 import "./TicketColumn.css";
 
 const TicketColumn = ({
@@ -12,6 +12,7 @@ const TicketColumn = ({
   users,
 }) => {
   const sortedTickets = sortTickets(tickets, sortOption);
+  console.log(sortTickets.title);
 
   return (
     <div className="ticket-column">
@@ -22,6 +23,7 @@ const TicketColumn = ({
         {groupingOption === "priority" && (
           <div className="priority-icon">{priorityIcons[title]}</div>
         )}
+        
         {title} <span className="ticket-count-badge">{tickets.length}</span>
         <div className="action-icons">
           <FaPlus className="action-icon" />
