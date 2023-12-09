@@ -1,18 +1,74 @@
 /* TicketCard.css */
+
+
+
+
 .ticket-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-  }
-  
-  .ticket-card h3 {
-    margin-bottom: 5px;
-  }
-  
-  .ticket-card p {
-    margin: 5px 0;
-  }
-  
-  /* Add more styles as needed */
-  
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  position: relative; /* Added position relative for positioning the profile picture */
+}
+
+.profile-picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5%;
+}
+
+.profile-picture img {
+  width: 40px; /* Set the desired width for the profile picture */
+  height: 40px; /* Set the desired height for the profile picture */
+  border-radius: 50%; /* Optional: Make the image circular */
+}
+
+
+/* New styles for the green dot */
+.profile-picture .green-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #4caf50; /* Green color */
+  border-radius: 50%;
+  border: 2px solid #fff; /* Optional: White border around the dot */
+}
+
+
+.ticket-card h2,
+.ticket-card h3 {
+  margin-bottom: 5px;
+}
+
+.ticket-card p {
+  margin: 5px 0;
+}
+
+.tags {
+  font-style: italic;
+  color: #666;
+}
+
+/* TicketCard.css */
+.priority-icon {
+  margin-top: 10px; /* Adjust as needed */
+}
+
+.urgent {
+  color: red;
+}
+
+.high {
+  color: orange;
+}
+
+.medium {
+  color: yellow;
+}
+
+.low {
+  color: green;
+}

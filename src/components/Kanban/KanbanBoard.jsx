@@ -5,7 +5,7 @@ import './KanbanBoard.css';
 
 const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
   // Group and sort tickets based on options
-  const groupedAndSortedTickets = groupAndSortTickets(tickets, groupingOption, sortOption);
+  const groupedAndSortedTickets = groupAndSortTickets(tickets, groupingOption, sortOption, users);
 
   return (
     <div className="kanban-board">
@@ -23,17 +23,16 @@ const KanbanBoard = ({ tickets, groupingOption, sortOption, users }) => {
 };
 
 // Helper function to group and sort tickets
-const groupAndSortTickets = (tickets, groupingOption, sortOption) => {
+const groupAndSortTickets = (tickets, groupingOption, sortOption, users) => {
   // Implement logic to group and sort tickets
   let groupedTickets = {};
-
   // Group tickets based on groupingOption
   switch (groupingOption) {
     case 'status':
       groupedTickets = groupByStatus(tickets);
       break;
     case 'user':
-      groupedTickets = groupByUser(tickets);
+      groupedTickets = groupByUser(tickets, users);
       break;
     case 'priority':
       groupedTickets = groupByPriority(tickets);
@@ -63,13 +62,16 @@ const groupByStatus = (tickets) => {
 };
 
 // Helper function to group tickets by user
-const groupByUser = (tickets) => {
+const groupByUser = (tickets, users) => {
   return tickets.reduce((grouped, ticket) => {
     const { userId } = ticket;
-    if (!grouped[userId]) {
-      grouped[userId] = [];
+    const user = users.find((user) => user.id === userId);
+    const userName = user ? user.name : 'Unknown User';
+    
+    if (!grouped[userName]) {
+      grouped[userName] = [];
     }
-    grouped[userId].push(ticket);
+    grouped[userName].push(ticket);
     return grouped;
   }, {});
 };
@@ -78,10 +80,12 @@ const groupByUser = (tickets) => {
 const groupByPriority = (tickets) => {
   return tickets.reduce((grouped, ticket) => {
     const { priority } = ticket;
-    if (!grouped[priority]) {
-      grouped[priority] = [];
+    const priorityLabel = getPriorityLabel(priority);
+    
+    if (!grouped[priorityLabel]) {
+      grouped[priorityLabel] = [];
     }
-    grouped[priority].push(ticket);
+    grouped[priorityLabel].push(ticket);
     return grouped;
   }, {});
 };
@@ -96,6 +100,24 @@ const sortTickets = (tickets, sortOption) => {
       return tickets.sort((a, b) => a.title.localeCompare(b.title));
     default:
       return tickets;
+  }
+};
+
+// Helper function to get priority label based on priority level
+const getPriorityLabel = (priority) => {
+  switch (priority) {
+    case 4:
+      return 'Urgent';
+    case 3:
+      return 'High';
+    case 2:
+      return 'Medium';
+    case 1:
+      return 'Low';
+    case 0:
+      return 'No priority';
+    default:
+      return '';
   }
 };
 

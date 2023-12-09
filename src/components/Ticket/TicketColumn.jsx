@@ -9,10 +9,12 @@ const TicketColumn = ({ title, tickets, sortOption, users }) => {
 
   return (
     <div className="ticket-column">
-      <h2>{title}</h2>
+      <h2>{title} {tickets.length}</h2>
       {sortedTickets.map((ticket) => (
         <TicketCard key={ticket.id} ticket={ticket} users={users} />
-      ))}
+        
+      ))
+      }
     </div>
   );
 };
