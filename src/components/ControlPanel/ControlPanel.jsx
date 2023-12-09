@@ -32,8 +32,8 @@ const ControlPanel = ({ groupingOption, sortOption, onGroupingChange, onSortChan
             <div>
               <label>Sorting:</label>
               <select value={sortOption} onChange={(e) => onSortChange(e.target.value)}>
-                <option value="priority">Sort by Priority</option>
-                <option value="title">Sort by Title</option>
+                <option value="priority">Priority</option>
+                <option value="title">Title</option>
               </select>
             </div>
           </div>
