@@ -42,10 +42,14 @@
   border: 2px solid #fff;
 }
 
+
+
+
 h2,
 h3 {
   margin-bottom: 10px;
 }
+
 
 .tags {
   display: flex;
