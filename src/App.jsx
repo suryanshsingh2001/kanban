@@ -3,6 +3,7 @@ import ControlPanel from "./components/ControlPanel/ControlPanel";
 import KanbanBoard from "./components/KanBan/KanbanBoard";
 import "./App.css";
 
+
 const App = () => {
   // Load initial state from local storage or use default values
   const initialGroupingOption =

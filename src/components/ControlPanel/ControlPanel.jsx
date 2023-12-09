@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiAdjustmentsHorizontal } from "react-icons/hi2";
+// import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import "./ControlPanel.css";
 
 const ControlPanel = ({
@@ -22,7 +22,8 @@ const ControlPanel = ({
     <div className="control-panel">
       <div className="dropdown">
         <button onClick={toggleDropdown} className="dropdown-toggle">
-          <HiAdjustmentsHorizontal className="icon" /> Display
+          {/* <HiAdjustmentsHorizontal className="icon" />  */}
+          Display
         </button>
         {isDropdownOpen && (
           <div className="dropdown-content">
