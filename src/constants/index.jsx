@@ -22,3 +22,11 @@ export const priorityIcons = {
     Low: <FaInfoCircle color="#5cb85c" />,
     "No priority": <FaBan color="#777" />,
 };
+
+export const userProfileImages = {
+    "usr-1": "https://randomuser.me/api/portraits/men/31.jpg",
+    "usr-2": "https://randomuser.me/api/portraits/men/11.jpg",
+    "usr-3": "https://randomuser.me/api/portraits/men/1.jpg",
+    "usr-4": "https://randomuser.me/api/portraits/men/2.jpg",
+    "usr-5": "https://randomuser.me/api/portraits/men/5.jpg",
+  };

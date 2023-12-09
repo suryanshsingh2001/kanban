@@ -1,43 +1,37 @@
 import React from "react";
 import "./TicketCard.css";
-import placeholderImage from "../../assets/profiles/placeholder_image.jpg";
-import {
-  FaExclamationCircle,
-  FaExclamationTriangle,
-  FaCheckCircle,
-  FaInfoCircle,
-  FaBan,
-} from "react-icons/fa";
 
+import { priorityIcons, userProfileImages } from "../../constants";
 
 const TicketCard = ({ ticket, users, groupingOption }) => {
-  const { title, userId, priority, status, tag, id } = ticket;
+  const { title, userId, priority, tag, id } = ticket;
 
   // Find the user based on userId
   const user = users.find((user) => user.id === userId);
 
-  // Map each priority to its corresponding icon for grouping by priority
-  const priorityIcons = {
-    Urgent: <FaExclamationCircle color="#d9534f" />,
-    High: <FaExclamationTriangle color="#f0ad4e" />,
-    Medium: <FaInfoCircle color="#FFA500" />, //yellow
-    Low: <FaInfoCircle color="#5cb85c" />,
-    "No priority": <FaBan color="#777" />,
+  // Helper function to get profile image URL based on user ID
+  const getProfileImageURL = (userID) => {
+    // Use the predefined mapping or provide a default URL if not found
+    return (
+      userProfileImages[userID] ||
+      "https://randomuser.me/api/portraits/lego/5.jpg"
+    );
   };
-  
 
   return (
     <div className="ticket-card">
       {groupingOption !== "priority" && (
-        <div className="priority-icon">{priorityIcons[getPriorityLabel(priority)]}</div>
+        <div className="priority-icon">
+          {priorityIcons[getPriorityLabel(priority)]}
+        </div>
       )}
-      <div className="profile-picture">
-        <img
-          src="https://randomuser.me/api/portraits/men/47.jpg"
-          alt="Profile"
-        />
-        {user && user.available && <div className="green-dot" />}
-      </div>
+      {/* Conditionally render profile picture based on grouping option */}
+      {groupingOption !== "user" && (
+        <div className="profile-picture">
+          <img src={getProfileImageURL(userId)} alt="Profile" />
+          {user && user.available && <div className="green-dot" />}
+        </div>
+      )}
       <h2 className="id-text">{id}</h2>
       <h3>{title}</h3>
 
