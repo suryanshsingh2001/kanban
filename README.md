@@ -8,15 +8,15 @@ This project is a Kanban board application designed to help teams manage their t
 
 ### Group By Status
 
-![Group By Status]()
+![Group By Status](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/GroupStatus.png)
 
 ### Group By Users
 
-![Group By Users]()
+![Group By Users](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/GroupUser.png)
 
 ### Group By Priority
 
-![Group By Priority]()
+![Group By Priority](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/GroupPriority.png)
 
 ### Sort By Title
 
