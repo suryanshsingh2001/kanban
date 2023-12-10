@@ -1,10 +1,10 @@
-# Kanban
+# Kanban Board 📒
 
 This project is a Kanban board application designed to help teams manage their tasks efficiently. The Kanban board is a visual tool that allows users to visualize their work, limit work in progress, and maximize efficiency.
 
 🔗 [Demo Link](https://kanban--quicksell.vercel.app/)
 
-## Screenshots
+## Screenshots 📷
 
 ### Default View
 
@@ -28,7 +28,7 @@ This project is a Kanban board application designed to help teams manage their t
 ### Sort By Priority
  ![Sort By Priority](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/SortPriority.png)
 
-## Folder Structure
+## Folder Structure 📁
 
 ```
 kanban/
@@ -65,13 +65,22 @@ kanban/
 
 ```
 
-## Technologies Used
+## Tasks ✅
+
+- [x] Group by Status, Priority, and Users
+- [x] Sort by Title and Priority
+- [x] Responsive Design
+- [x] Local Storage API- Data persists on page reload
+- [x] Layout
+
+## Technologies Used 🛠️
 
 - React
 - React-Icons
 - Vanilla CSS
+- Local Storage API
 
-## Getting Started
+## Getting Started 🚀
 
 1. Clone the repository
 
@@ -97,4 +106,9 @@ npm run dev
 http://localhost:5173/
 ```
 
-##
+----
+
+Thank you for visiting my repository.
+>Suryansh Singh
+
+[![Your Badge](https://img.shields.io/badge/-Github-black?style=flat&logo=github)](https://github.com/suryanshsingh2001/)
