@@ -2,7 +2,8 @@
 
 This project is a Kanban board application designed to help teams manage their tasks efficiently. The Kanban board is a visual tool that allows users to visualize their work, limit work in progress, and maximize efficiency.
 
-🔗 [Demo Link](https://kanban--quicksell.vercel.app/)
+
+🔗 [Demo Link](https://kanbanboard-quicksell.vercel.app/)
 
 ## Screenshots 📷
 
