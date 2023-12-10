@@ -6,6 +6,10 @@ This project is a Kanban board application designed to help teams manage their t
 
 ## Screenshots
 
+### Default View
+
+![Default View](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/home.png)
+
 ### Group By Status
 
 ![Group By Status](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/GroupStatus.png)
@@ -19,12 +23,10 @@ This project is a Kanban board application designed to help teams manage their t
 ![Group By Priority](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/GroupPriority.png)
 
 ### Sort By Title
-
-    ![Sort By Title]()
+![Sort By Title](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/SortTitle.png)
 
 ### Sort By Priority
-
-    ![Sort By Priority]()
+ ![Sort By Priority](https://github.com/suryanshsingh2001/kanban/blob/main/Screenshots/SortPriority.png)
 
 ## Folder Structure
 
